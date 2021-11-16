@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Buttons from "./components/Buttons";
+import Heading from "./components/Heading";
+import Display from "./components/Display";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      display: [],
+      currentDisplay: "0",
+      operation: "",
+    };
+  }
+
+  enter = (event) => {
+    console.log(typeof event.target.value);
+    const { currentDisplay, display } = this.state;
+    console.log(display);
+    if ("0123456789".includes(event.target.value)) {
+      this.setState({
+        currentDisplay: currentDisplay + event.target.value,
+        //currentDisplay: [...display, event.target.value],
+      });
+    } else {
+      this.setState({
+        display: [...display, currentDisplay, event.target.value],
+        currentDisplay: "0",
+        operation: event.target.value,
+      });
+    }
+  };
+
+  equal = async () => {
+    const { display, currentDisplay } = this.state;
+    await this.setState({
+      display: [...display, currentDisplay],
+    });
+    console.log(display, "hi", currentDisplay);
+  };
+
+  clear = () => {
+    this.setState({
+      display: [],
+      currentDisplay: "0",
+      operation: "",
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <Heading />
+        <Display currentDisplayHandler={this.state.currentDisplay} />
+        <Buttons
+          enterHandler={this.enter}
+          equalHandler={this.equal}
+          clearHandler={this.clear}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
