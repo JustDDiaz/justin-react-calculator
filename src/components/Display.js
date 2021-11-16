@@ -1,6 +1,6 @@
 const Display = (props) => {
   return (
-    <div>
+    <div className="display">
       <h3>Display: {props.currentDisplayHandler}</h3>
     </div>
   );

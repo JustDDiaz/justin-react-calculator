@@ -32,9 +32,9 @@ class App extends React.Component {
     }
   };
 
-  equal = async () => {
+  equal = () => {
     const { display, currentDisplay } = this.state;
-    await this.setState({
+    this.setState({
       display: [...display, currentDisplay],
     });
     console.log(display, "hi", currentDisplay);
