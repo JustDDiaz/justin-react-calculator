@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 400px;
+  margin-left: 35%;
 }
 
 .display {
@@ -7,6 +9,7 @@
   background-color: gray;
   text-align: center;
   margin: 15px;
+  width: 320px;
 }
 
 .buttons {
@@ -14,16 +17,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 15px;
+  width: 320px;
 }
 
 .character {
   background-color: orange;
+  height: 45px;
+  width: 100px;
 }
 
 .special {
   background-color: darkgray;
+  height: 45px;
+  width: 100px;
 }
 
 .numbers {
   background-color: lightgray;
+  height: 45px;
+  width: 100px;
 }
