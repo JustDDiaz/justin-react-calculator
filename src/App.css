@@ -10,6 +10,7 @@
   text-align: center;
   margin: 15px;
   width: 320px;
+  margin-left: 10%;
 }
 
 .buttons {
@@ -18,22 +19,27 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin: 15px;
   width: 320px;
+  margin-left: 10%;
+  gap: 3px;
 }
 
 .character {
   background-color: orange;
   height: 45px;
   width: 100px;
+  margin-left: 3%;
 }
 
 .special {
   background-color: darkgray;
   height: 45px;
   width: 100px;
+  margin-left: 3%;
 }
 
 .numbers {
   background-color: lightgray;
   height: 45px;
   width: 100px;
+  margin-left: 3%;
 }
