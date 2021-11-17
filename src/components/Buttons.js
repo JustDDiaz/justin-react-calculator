@@ -40,7 +40,7 @@ const Buttons = (props) => {
       <button onClick={props.enterHandler} value="0" className="numbers">
         0
       </button>
-      <button onClick={props.enterHandler} value=".">
+      <button onClick={props.enterHandler} value="." className="numbers">
         .
       </button>
       <button onClick={props.enterHandler} value="÷" className="character">
